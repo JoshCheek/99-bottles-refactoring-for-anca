@@ -6,12 +6,14 @@ class Bottles
   def verses(first_number_of_bottles, second_number_of_bottles)
     iterations = first_number_of_bottles - second_number_of_bottles + 1
     song_fragment = ''
-    iterations.times do |number_of_bottles|
+    iterations.times do |i|
+      number_of_bottles = first_number_of_bottles - i
       song_fragment += verse(number_of_bottles)
+      song_fragment += "\n"
       break if number_of_bottles == 0
       number_of_bottles -= 1
     end
-    song_fragment
+    song_fragment.chomp
   end
 
   def verse(number_of_bottles)
