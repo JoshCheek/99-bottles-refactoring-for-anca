@@ -10,25 +10,18 @@ class Bottles
       .join("\n")
   end
 
-  def verse(number_of_bottles)
-    num_left     = number_of_bottles - 1
-    post_bottles = bottle_str(num_left)
-    pre_bottles  = bottle_str(number_of_bottles)
-    if number_of_bottles == 1
-      "#{number_of_bottles} #{pre_bottles} of beer on the wall, #{number_of_bottles} #{pre_bottles} of beer.\n" +
+  def verse(num_bottles)
+    if num_bottles == 1
+      "#{num_bottles} bottle of beer on the wall, #{num_bottles} bottle of beer.\n" +
         "Take it down and pass it around, no more bottles of beer on the wall.\n"
-    elsif number_of_bottles == 0
-      "No more #{pre_bottles} of beer on the wall, no more #{pre_bottles} of beer.\n" +
+    elsif num_bottles == 0
+      "No more bottles of beer on the wall, no more bottles of beer.\n" +
         "Go to the store and buy some more, 99 bottles of beer on the wall.\n"
     else
-      "#{number_of_bottles} #{pre_bottles} of beer on the wall, #{number_of_bottles} #{pre_bottles} of beer.\n" +
-        "Take one down and pass it around, #{num_left} #{post_bottles} of beer on the wall.\n"
+      num_left    = num_bottles - 1
+      bottles_str = num_left == 1 ? 'bottle' : 'bottles'
+      "#{num_bottles} bottles of beer on the wall, #{num_bottles} bottles of beer.\n" +
+        "Take one down and pass it around, #{num_left} #{bottles_str} of beer on the wall.\n"
     end
-  end
-
-  private
-
-  def bottle_str(number_of_bottles)
-    number_of_bottles == 1 ? 'bottle' : 'bottles'
   end
 end
