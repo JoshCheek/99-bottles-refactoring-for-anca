@@ -11,12 +11,12 @@ class Bottles
   end
 
   def verse(num_bottles)
-    if num_bottles == 1
-      "#{num_bottles} bottle of beer on the wall, #{num_bottles} bottle of beer.\n" +
-        "Take it down and pass it around, no more bottles of beer on the wall.\n"
-    elsif num_bottles == 0
+    if num_bottles == 0
       "No more bottles of beer on the wall, no more bottles of beer.\n" +
         "Go to the store and buy some more, 99 bottles of beer on the wall.\n"
+    elsif num_bottles == 1
+      "#{num_bottles} bottle of beer on the wall, #{num_bottles} bottle of beer.\n" +
+        "Take it down and pass it around, no more bottles of beer on the wall.\n"
     else
       num_left    = num_bottles - 1
       bottles_str = num_left == 1 ? 'bottle' : 'bottles'
