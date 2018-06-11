@@ -18,10 +18,9 @@ class Bottles
       "#{num_bottles} bottle of beer on the wall, #{num_bottles} bottle of beer.\n" +
         "Take it down and pass it around, no more bottles of beer on the wall.\n"
     else
-      num_left    = num_bottles - 1
-      bottles_str = num_left == 1 ? 'bottle' : 'bottles'
+      plural = 's' unless num_bottles == 2
       "#{num_bottles} bottles of beer on the wall, #{num_bottles} bottles of beer.\n" +
-        "Take one down and pass it around, #{num_left} #{bottles_str} of beer on the wall.\n"
+        "Take one down and pass it around, #{num_bottles - 1} bottle#{plural} of beer on the wall.\n"
     end
   end
 end
